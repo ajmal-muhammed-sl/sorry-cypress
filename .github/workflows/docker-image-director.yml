@@ -81,4 +81,6 @@ jobs:
 
           # docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           # docker push $IMAGE_ID:$VERSION
-          docker buildx build --file packages/director/Dockerfile --platform=linux/arm64/v8,linux/amd64 --tag $IMAGE_ID:2 --tag $IMAGE_ID:2.5 --tag $IMAGE_ID:2.5.11 --provenance=false --push .
+          docker buildx build --file packages/director/Dockerfile --platform=linux/amd64 --tag $IMAGE_ID:1 --tag $IMAGE_ID:1.5 --tag $IMAGE_ID:1.5.11 --provenance=false --push .
+          docker buildx build --file packages/director/Dockerfile --platform=linux/arm64/v8 --tag $IMAGE_ID:11 --tag $IMAGE_ID:11.5 --tag $IMAGE_ID:11.5.11 --provenance=false --push .
+
