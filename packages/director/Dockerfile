@@ -33,8 +33,8 @@ RUN apk add --no-cache tini
 RUN apk add --no-cache --upgrade bash
 RUN apk --no-cache add \
     xvfb \
-    gtk2 \
-    gtk3 \
+    gtk+2.0 \
+    gtk+3.0 \
     libnotify \
     gconf \
     nss \
