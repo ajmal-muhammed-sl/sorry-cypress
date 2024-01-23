@@ -9,7 +9,6 @@ COPY package.json ./
 COPY yarn.lock ./
 COPY tsconfig.json ./
 RUN apk add --no-cache git
-RUN git config --global --add safe.directory /tmp/_circleci_local_build_repo
 RUN yarn install --frozen-lockfile
 
 RUN yarn workspace @sorry-cypress/common build
@@ -28,8 +27,8 @@ WORKDIR /app
 COPY --chown=node:node --from=build /app/packages/ packages/
 COPY --chown=node:node --from=build /app/node_modules/ node_modules/
 RUN apk add --no-cache git
-RUN git config --global --add safe.directory /tmp/_circleci_local_build_repo
 RUN apk add --no-cache tini
+RUN apk add --no-cache --upgrade bash
 ENV NODE_ENV=production
 # USER ${USER}
 EXPOSE 1234
