@@ -44,7 +44,7 @@ RUN apt-get install -y curl && \
     curl -sf https://gobinaries.com/tj/node-prune | sh && \
     node-prune
 
-FROM FROM node:18.12.1-bullseye-slim
+FROM node:18.12.1-bullseye-slim
 
 ARG USER=node
 WORKDIR /app
