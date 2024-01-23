@@ -20,7 +20,7 @@ RUN yarn workspace @sorry-cypress/mongo build
 RUN yarn workspace @sorry-cypress/logger build
 RUN yarn workspace @sorry-cypress/director build
 
-RUN yarn install --production --frozen-lockfile
+RUN yarn install --production --frozen-lockfile --network-timeout 600000
 RUN apt-get install -y curl && \
     curl -sf https://gobinaries.com/tj/node-prune | sh && \
     node-prune
