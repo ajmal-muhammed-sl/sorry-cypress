@@ -31,6 +31,15 @@ RUN apk add --no-cache git
 RUN git config --global --add safe.directory /tmp/_circleci_local_build_repo
 RUN apk add --no-cache tini
 RUN apk add --no-cache --upgrade bash
+RUN apk --no-cache add \
+    xvfb \
+    gtk2 \
+    gtk3 \
+    libnotify \
+    gconf \
+    nss \
+    libxscrnsaver \
+    alsa-lib
 ENV NODE_ENV=production
 # USER ${USER}
 EXPOSE 1234
