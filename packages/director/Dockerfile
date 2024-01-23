@@ -13,7 +13,7 @@ COPY tsconfig.json ./
 
 RUN apt-get update && apt-get install -y git
 RUN git config --global --add safe.directory /tmp/_circleci_local_build_repo
-RUN yarn install --frozen-lockfile
+RUN yarn install --frozen-lockfile  --network-timeout 600000
 
 RUN yarn workspace @sorry-cypress/common build
 RUN yarn workspace @sorry-cypress/mongo build
