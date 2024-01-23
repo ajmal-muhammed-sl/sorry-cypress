@@ -1,5 +1,5 @@
 ARG BUILD_PLATFORM=linux/amd64
-FROM --platform="${BUILD_PLATFORM}" node:16-alpine AS build
+FROM --platform="${BUILD_PLATFORM}" node:18.2-alpine AS build
 WORKDIR /app
 COPY packages/director/ ./packages/director/
 COPY packages/common/ ./packages/common
@@ -20,7 +20,7 @@ RUN apk --no-cache add curl && \
     curl -sf https://gobinaries.com/tj/node-prune | sh && \
     node-prune
 
-FROM node:16-alpine
+FROM node:18.2-alpine
 ARG USER=node
 WORKDIR /app
 COPY --chown=node:node --from=build /app/packages/ packages/

@@ -82,3 +82,6 @@ dockerBuildAndPush "packages/${service}" "agoldis/sorry-cypress-${service}"
 
 echo ========================
 echo 🎉 Released to Dockerhub: $TAGS
+
+
+docker buildx build --file packages/dashboard/Dockerfile --platform=linux/arm64/v8,linux/amd64 --tag abc/sorry-cypress-dashboard:2 --tag abc/sorry-cypress-dashboard:2.5 --tag abc/sorry-cypress-dashboard:2.5.11 --provenance=false --push
