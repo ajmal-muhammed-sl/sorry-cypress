@@ -26,6 +26,7 @@ WORKDIR /app
 COPY --chown=node:node --from=build /app/packages/ packages/
 COPY --chown=node:node --from=build /app/node_modules/ node_modules/
 RUN apk add --no-cache tini
+RUN apk add --no-cache git
 ENV NODE_ENV=production
 USER ${USER}
 EXPOSE 1234
