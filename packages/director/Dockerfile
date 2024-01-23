@@ -37,7 +37,7 @@ RUN apt-get update && apt-get install -y git
 RUN git config --global --add safe.directory /tmp/_circleci_local_build_repo
 RUN apt-get install -y tini
 RUN apt-get install -y --upgrade bash
-RUN apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+RUN apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 ENV NODE_ENV=production
 
 # USER ${USER}
